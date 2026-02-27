@@ -1,0 +1,54 @@
+Analyzing ai_mechanix...                                        
+
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/acoustic_recording_page.dart:93:57 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/acoustic_recording_page.dart:93:100 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/analyzing_page.dart:71:58 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/analyzing_page.dart:103:60 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/analyzing_page.dart:192:42 • deprecated_member_use
+  error • The method 'jetbrainsMono' isn't defined for the type 'GoogleFonts' • lib/features/diagnosis/presentation/pages/chat_page.dart:129:34 • undefined_method
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/diagnosis_page.dart:44:49 • deprecated_member_use
+  error • Invalid constant value • lib/features/diagnosis/presentation/pages/diagnosis_page.dart:252:21 • invalid_constant
+  error • The getter 'strokeRoundedFileDocument' isn't defined for the type 'HugeIcons' • lib/features/diagnosis/presentation/pages/diagnosis_page.dart:252:31 • undefined_getter
+  error • The method 'jetbrainsMono' isn't defined for the type 'GoogleFonts' • lib/features/diagnosis/presentation/pages/diagnosis_page.dart:296:32 • undefined_method
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/photo_preview_page.dart:56:43 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/results_page.dart:46:67 • deprecated_member_use
+  error • The method 'jetbrainsMono' isn't defined for the type 'GoogleFonts' • lib/features/diagnosis/presentation/pages/results_page.dart:124:36 • undefined_method
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/saved_reports_page.dart:95:36 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:25:52 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:33:54 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:60:48 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:187:42 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:190:44 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:198:46 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:215:48 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:238:39 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:243:41 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:253:41 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:276:44 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:332:40 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:335:42 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:344:46 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:373:52 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:387:50 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/history/presentation/pages/history_page.dart:396:43 • deprecated_member_use
+  error • The method 'jetbrainsMono' isn't defined for the type 'GoogleFonts' • lib/features/home/presentation/pages/home_page.dart:409:32 • undefined_method
+  error • The method 'jetbrainsMono' isn't defined for the type 'GoogleFonts' • lib/features/home/presentation/pages/notifications_page.dart:179:38 • undefined_method
+  error • The method 'jetbrainsMono' isn't defined for the type 'GoogleFonts' • lib/features/home/presentation/pages/vehicle_health_page.dart:154:36 • undefined_method
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/home/presentation/pages/vehicle_health_page.dart:183:59 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/home/presentation/pages/vehicle_health_page.dart:190:46 • deprecated_member_use
+  error • The method 'jetbrainsMono' isn't defined for the type 'GoogleFonts' • lib/features/mechanic_locator/presentation/pages/booking_page.dart:131:44 • undefined_method
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/booking_page.dart:249:50 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/garage_details_page.dart:68:47 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/garage_details_page.dart:78:34 • deprecated_member_use
+  error • The method 'jetbrainsMono' isn't defined for the type 'GoogleFonts' • lib/features/mechanic_locator/presentation/pages/garage_details_page.dart:112:38 • undefined_method
+  error • The method 'jetbrainsMono' isn't defined for the type 'GoogleFonts' • lib/features/mechanic_locator/presentation/pages/garage_details_page.dart:210:32 • undefined_method
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/mechanic_locator_page.dart:113:41 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/mechanic_locator_page.dart:133:37 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/sos_page.dart:77:39 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/sos_page.dart:78:58 • deprecated_member_use
+  error • Invalid constant value • lib/features/onboarding/presentation/pages/vehicle_setup_page.dart:72:33 • invalid_constant
+  error • The getter 'strokeRoundedIdCard' isn't defined for the type 'HugeIcons' • lib/features/onboarding/presentation/pages/vehicle_setup_page.dart:72:43 • undefined_getter
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/onboarding/presentation/pages/welcome_page.dart:32:46 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/profile/presentation/pages/profile_page.dart:200:60 • deprecated_member_use
+
+50 issues found. (ran in 2.4s)
