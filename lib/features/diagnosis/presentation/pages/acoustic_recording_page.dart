@@ -90,7 +90,7 @@ class _AcousticRecordingPageState extends State<AcousticRecordingPage> with Tick
                 width: 100,
                 height: 100,
                 decoration: BoxDecoration(
-                  color: _isRecording ? AppColors.error.withOpacity(0.1) : AppColors.primaryAccent.withOpacity(0.1),
+                  color: _isRecording ? AppColors.error.withValues(alpha: 0.1) : AppColors.primaryAccent.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: _isRecording ? AppColors.error : AppColors.primaryAccent,
@@ -115,7 +115,14 @@ class _AcousticRecordingPageState extends State<AcousticRecordingPage> with Tick
                   MaterialPageRoute(builder: (_) => const AnalyzingPage()),
                 );
               },
-              icon: HugeIcons.strokeRoundedAiMagic,
+              icon: Text(
+                'M',
+                style: GoogleFonts.museoModerno(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
             ),
             const SizedBox(height: 24),
           ],

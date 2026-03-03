@@ -13,6 +13,8 @@ dependencies:
   forui: ^0.19.0
   google_fonts: ^8.0.2
   hugeicons: ^1.1.5
+  flutter_spinkit: ^5.1.0
+  lottie: ^2.2.0
 
 dev_dependencies:
   flutter_test:

@@ -32,7 +32,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
         ),
         title: Text(
           'Edit Profile',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 18,
             fontWeight: FontWeight.w300,
             color: AppColors.textPrimary,
@@ -52,7 +52,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
             _buildInputGroup('Email Address', _emailController, HugeIcons.strokeRoundedMail01),
             const SizedBox(height: 24),
             _buildInputGroup('Phone Number', _phoneController, HugeIcons.strokeRoundedSmartPhone01),
-            const SizedBox(height: 56),
+            const SizedBox(height: 48),
             _buildSaveAction(context),
             const SizedBox(height: 32),
           ],
@@ -76,7 +76,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
             child: Center(
               child: Text(
                 'AJ',
-                style: GoogleFonts.inter(fontSize: 32, fontWeight: FontWeight.w300, color: AppColors.textPrimary),
+                style: GoogleFonts.dmSans(fontSize: 32, fontWeight: FontWeight.w300, color: AppColors.textPrimary),
               ),
             ),
           ),
@@ -103,7 +103,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
       children: [
         Text(
           label,
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 13,
             fontWeight: FontWeight.w500,
             color: AppColors.textSecondary,
@@ -118,7 +118,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           ),
           child: TextField(
             controller: controller,
-            style: GoogleFonts.inter(fontSize: 15, color: AppColors.textPrimary),
+            style: GoogleFonts.dmSans(fontSize: 15, color: AppColors.textPrimary),
             decoration: InputDecoration(
               prefixIcon: Padding(
                 padding: const EdgeInsets.all(14),
@@ -136,7 +136,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Widget _buildSaveAction(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 56,
+      height: 48,
       child: ElevatedButton(
         onPressed: () => Navigator.pop(context),
         style: ElevatedButton.styleFrom(
@@ -147,7 +147,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
         ),
         child: Text(
           'Save Changes',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),

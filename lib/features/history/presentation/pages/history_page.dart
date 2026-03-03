@@ -13,15 +13,25 @@ class HistoryPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leadingWidth: 0,
+        leading: const SizedBox.shrink(),
         title: Text(
-          'Service History',
-          style: GoogleFonts.inter(
-            fontSize: 18,
-            fontWeight: FontWeight.w300,
+          'History',
+          style: GoogleFonts.dmSans(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
+            letterSpacing: -1,
           ),
         ),
-        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const HugeIcon(icon: HugeIcons.strokeRoundedArrowLeft02, color: AppColors.textSecondary, size: 22),
+            onPressed: () => Navigator.pop(context),
+          ),
+          const SizedBox(width: 16),
+        ],
+        centerTitle: false,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -30,18 +40,19 @@ class HistoryPage extends StatelessWidget {
           children: [
             const SizedBox(height: 24),
             Text(
-              'Your vehicle\'s\nComplete Care Log',
-              style: GoogleFonts.inter(
+              "Your vehicle's\nComplete Care Log",
+              style: GoogleFonts.dmSans(
                 fontSize: 32,
-                fontWeight: FontWeight.w200,
+                fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
-                height: 1.2,
+                height: 1.1,
+                letterSpacing: -1,
               ),
             ),
             const SizedBox(height: 16),
             Text(
               'A chronological record of every diagnostic session, repair, and maintenance performed on your vehicle.',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 14,
                 color: AppColors.textSecondary,
                 height: 1.5,
@@ -107,7 +118,7 @@ class HistoryPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: AppColors.surfaceL1,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(32),
           border: Border.all(color: AppColors.borderSubtle),
         ),
         child: Column(
@@ -126,7 +137,7 @@ class HistoryPage extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               label,
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 11,
                 fontWeight: FontWeight.w500,
                 color: AppColors.textSecondary,
@@ -140,28 +151,32 @@ class HistoryPage extends StatelessWidget {
   }
 
   Widget _buildFilterTabs() {
+    const double controlHeight = 48; // keep parity with input fields
+
     return Row(
       children: [
-        _buildFilterChip('All', true),
+        _buildFilterChip('All', true, height: controlHeight),
         const SizedBox(width: 8),
-        _buildFilterChip('Services', false),
+        _buildFilterChip('Services', false, height: controlHeight),
         const SizedBox(width: 8),
-        _buildFilterChip('AI Sessions', false),
+        _buildFilterChip('AI Sessions', false, height: controlHeight),
       ],
     );
   }
 
-  Widget _buildFilterChip(String label, bool isActive) {
+  Widget _buildFilterChip(String label, bool isActive, {double height = 48}) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      height: height,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         color: isActive ? Colors.white : AppColors.surfaceL1,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(32),
         border: Border.all(color: isActive ? Colors.white : AppColors.borderSubtle),
       ),
+      alignment: Alignment.center,
       child: Text(
         label,
-        style: GoogleFonts.inter(
+        style: GoogleFonts.dmSans(
           fontSize: 13,
           fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
           color: isActive ? Colors.black : AppColors.textSecondary,
@@ -176,7 +191,7 @@ class HistoryPage extends StatelessWidget {
       children: [
         Text(
           month.toUpperCase(),
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 11,
             fontWeight: FontWeight.w600,
             color: AppColors.textDisabled,
@@ -195,7 +210,7 @@ class HistoryPage extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppColors.surfaceL1,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(32),
         border: Border.all(color: AppColors.borderSubtle),
       ),
       child: Row(
@@ -219,7 +234,7 @@ class HistoryPage extends StatelessWidget {
               children: [
                 Text(
                   item.title,
-                  style: GoogleFonts.inter(
+                  style: GoogleFonts.dmSans(
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
                     color: AppColors.textPrimary,
@@ -228,7 +243,7 @@ class HistoryPage extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   item.subtitle,
-                  style: GoogleFonts.inter(
+                  style: GoogleFonts.dmSans(
                     fontSize: 12,
                     color: AppColors.textSecondary,
                   ),

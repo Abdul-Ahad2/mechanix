@@ -1,0 +1,23 @@
+Analyzing mechanix...                                           
+
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/acoustic_recording_page.dart:93:57 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/acoustic_recording_page.dart:93:100 • deprecated_member_use
+warning • Unused import: 'package:hugeicons/hugeicons.dart' • lib/features/diagnosis/presentation/pages/analyzing_page.dart:5:8 • unused_import
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/analyzing_page.dart:71:58 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/analyzing_page.dart:103:60 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/analyzing_page.dart:195:42 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/photo_preview_page.dart:56:43 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/results_page.dart:46:67 • deprecated_member_use
+warning • Unnecessary cast • lib/features/home/presentation/pages/notifications_page.dart:139:19 • unnecessary_cast
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/booking_page.dart:249:50 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/garage_details_page.dart:68:47 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/garage_details_page.dart:78:34 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/mechanic_locator_page.dart:116:41 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/mechanic_locator_page.dart:136:37 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/sos_page.dart:77:39 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/sos_page.dart:78:58 • deprecated_member_use
+warning • Unused import: 'package:hugeicons/hugeicons.dart' • lib/features/onboarding/presentation/pages/splash_page.dart:3:8 • unused_import
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/onboarding/presentation/pages/welcome_page.dart:32:46 • deprecated_member_use
+warning • Unnecessary cast • lib/features/profile/presentation/pages/premium_page.dart:100:17 • unnecessary_cast
+
+19 issues found. (ran in 2.1s)

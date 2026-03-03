@@ -1,0 +1,46 @@
+Analyzing mechanix...                                           
+
+  error • Expected to find ';' • lib/core/theme/app_theme.dart:189:6 • expected_token
+warning • Dead code • lib/core/theme/app_theme.dart:190:5 • dead_code
+  error • Expected an identifier • lib/core/theme/app_theme.dart:190:5 • missing_identifier
+  error • Unexpected text ';' • lib/core/theme/app_theme.dart:190:5 • unexpected_token
+   info • Unnecessary empty statement • lib/core/theme/app_theme.dart:190:6 • empty_statements
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/acoustic_recording_page.dart:93:57 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/acoustic_recording_page.dart:93:100 • deprecated_member_use
+warning • Unused import: 'package:hugeicons/hugeicons.dart' • lib/features/diagnosis/presentation/pages/analyzing_page.dart:5:8 • unused_import
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/analyzing_page.dart:71:58 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/analyzing_page.dart:103:60 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/analyzing_page.dart:195:42 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/photo_preview_page.dart:56:43 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/diagnosis/presentation/pages/results_page.dart:46:67 • deprecated_member_use
+  error • The getter 'strokeRoundedActivity' isn't defined for the type 'HugeIcons' • lib/features/home/presentation/pages/home_page.dart:187:37 • undefined_getter
+  error • Expected an identifier • lib/features/home/presentation/pages/home_page.dart:249:11 • missing_identifier
+  error • Expected to find ')' • lib/features/home/presentation/pages/home_page.dart:249:11 • expected_token
+  error • Expected to find ';' • lib/features/home/presentation/pages/home_page.dart:250:9 • expected_token
+warning • Dead code • lib/features/home/presentation/pages/home_page.dart:250:10 • dead_code
+  error • Expected an identifier • lib/features/home/presentation/pages/home_page.dart:250:10 • missing_identifier
+  error • Expected to find ';' • lib/features/home/presentation/pages/home_page.dart:250:10 • expected_token
+  error • Unexpected text ';' • lib/features/home/presentation/pages/home_page.dart:250:10 • unexpected_token
+  error • Expected an identifier • lib/features/home/presentation/pages/home_page.dart:251:7 • missing_identifier
+  error • Expected to find ';' • lib/features/home/presentation/pages/home_page.dart:251:7 • expected_token
+  error • Unexpected text ';' • lib/features/home/presentation/pages/home_page.dart:251:7 • unexpected_token
+  error • Expected an identifier • lib/features/home/presentation/pages/home_page.dart:251:8 • missing_identifier
+  error • Expected to find ';' • lib/features/home/presentation/pages/home_page.dart:251:8 • expected_token
+  error • Unexpected text ';' • lib/features/home/presentation/pages/home_page.dart:251:8 • unexpected_token
+  error • Expected an identifier • lib/features/home/presentation/pages/home_page.dart:252:5 • missing_identifier
+  error • Unexpected text ';' • lib/features/home/presentation/pages/home_page.dart:252:5 • unexpected_token
+   info • Unnecessary empty statement • lib/features/home/presentation/pages/home_page.dart:252:6 • empty_statements
+warning • Unnecessary cast • lib/features/home/presentation/pages/notifications_page.dart:139:19 • unnecessary_cast
+  error • The getter 'strokeRoundedActivity' isn't defined for the type 'HugeIcons' • lib/features/home/presentation/pages/vehicle_health_page.dart:52:31 • undefined_getter
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/booking_page.dart:249:50 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/garage_details_page.dart:68:47 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/garage_details_page.dart:78:34 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/mechanic_locator_page.dart:116:41 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/mechanic_locator_page.dart:136:37 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/sos_page.dart:77:39 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/mechanic_locator/presentation/pages/sos_page.dart:78:58 • deprecated_member_use
+warning • Unused import: 'package:hugeicons/hugeicons.dart' • lib/features/onboarding/presentation/pages/splash_page.dart:3:8 • unused_import
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/onboarding/presentation/pages/welcome_page.dart:32:46 • deprecated_member_use
+warning • Unnecessary cast • lib/features/profile/presentation/pages/premium_page.dart:100:17 • unnecessary_cast
+
+42 issues found. (ran in 1.7s)

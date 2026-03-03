@@ -8,6 +8,7 @@ import 'package:ai_mechanix/features/mechanic_locator/presentation/pages/sos_pag
 class MechanicLocatorPage extends StatelessWidget {
   const MechanicLocatorPage({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +26,7 @@ class MechanicLocatorPage extends StatelessWidget {
         ),
         title: Text(
           'Mechanic Locator',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 18,
             fontWeight: FontWeight.w300,
             color: AppColors.textPrimary,
@@ -66,7 +67,9 @@ class MechanicLocatorPage extends StatelessWidget {
   Widget _buildSearchAndFilter() {
     return Column(
       children: [
+        // fixed height so the chips can match it
         Container(
+          height: 48,
           padding: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
             color: AppColors.surfaceL1,
@@ -74,10 +77,10 @@ class MechanicLocatorPage extends StatelessWidget {
             border: Border.all(color: AppColors.borderSubtle),
           ),
           child: TextField(
-            style: GoogleFonts.inter(fontSize: 15, color: AppColors.textPrimary),
+            style: GoogleFonts.dmSans(fontSize: 15, color: AppColors.textPrimary),
             decoration: InputDecoration(
               hintText: 'Search for services or garages...',
-              hintStyle: GoogleFonts.inter(fontSize: 14, color: AppColors.textDisabled),
+              hintStyle: GoogleFonts.dmSans(fontSize: 14, color: AppColors.textDisabled),
               border: InputBorder.none,
               icon: const HugeIcon(icon: HugeIcons.strokeRoundedSearch01, color: AppColors.textDisabled, size: 20),
             ),
@@ -88,15 +91,15 @@ class MechanicLocatorPage extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              _FilterChip(label: 'All', isActive: true),
+              _FilterChip(height: 48, label: 'All', isActive: true),
               const SizedBox(width: 8),
-              _FilterChip(label: 'Engine', isActive: false),
+              _FilterChip(height: 48, label: 'Engine', isActive: false),
               const SizedBox(width: 8),
-              _FilterChip(label: 'Brakes', isActive: false),
+              _FilterChip(height: 48, label: 'Brakes', isActive: false),
               const SizedBox(width: 8),
-              _FilterChip(label: 'Electrical', isActive: false),
+              _FilterChip(height: 48, label: 'Electrical', isActive: false),
               const SizedBox(width: 8),
-              _FilterChip(label: 'Diagnostics', isActive: false),
+              _FilterChip(height: 48, label: 'Diagnostics', isActive: false),
             ],
           ),
         ),
@@ -110,7 +113,7 @@ class MechanicLocatorPage extends StatelessWidget {
       child: Center(
         child: HugeIcon(
           icon: HugeIcons.strokeRoundedMapsLocation01,
-          color: AppColors.textDisabled.withOpacity(0.1),
+          color: AppColors.textDisabled.withValues(alpha: 0.1),
           size: 120,
         ),
       ),
@@ -130,7 +133,7 @@ class MechanicLocatorPage extends StatelessWidget {
             border: Border.all(color: AppColors.borderSubtle),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.4),
+                color: Colors.black.withValues(alpha: 0.4),
                 blurRadius: 20,
                 offset: const Offset(0, -10),
               ),
@@ -156,7 +159,7 @@ class MechanicLocatorPage extends StatelessWidget {
               }
               return _MechanicCard(
                 name: index == 1 ? 'ProAuto Center' : index == 2 ? 'QuickFix Garage' : 'Elite Motors',
-                distance: '${index * 0.8} km',
+                distance: '10km',
                 rating: 4.8,
                 onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const GarageDetailsPage())),
               );
@@ -171,21 +174,24 @@ class MechanicLocatorPage extends StatelessWidget {
 class _FilterChip extends StatelessWidget {
   final String label;
   final bool isActive;
+  final double height;
 
-  const _FilterChip({required this.label, required this.isActive});
+  const _FilterChip({required this.label, required this.isActive, this.height = 48});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      height: height,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         color: isActive ? Colors.white : AppColors.surfaceL1,
         borderRadius: BorderRadius.circular(100),
         border: Border.all(color: isActive ? Colors.white : AppColors.borderSubtle),
       ),
+      alignment: Alignment.center,
       child: Text(
         label,
-        style: GoogleFonts.inter(
+        style: GoogleFonts.dmSans(
           fontSize: 13,
           fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
           color: isActive ? Colors.black : AppColors.textPrimary,
@@ -237,7 +243,7 @@ class _MechanicCard extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.w500, color: AppColors.textPrimary),
+                    style: GoogleFonts.dmSans(fontSize: 15, fontWeight: FontWeight.w500, color: AppColors.textPrimary),
                   ),
                   const SizedBox(height: 4),
                   Row(
@@ -246,7 +252,7 @@ class _MechanicCard extends StatelessWidget {
                       const SizedBox(width: 4),
                       Text(
                         '$rating • $distance',
-                        style: GoogleFonts.inter(fontSize: 13, color: AppColors.textSecondary),
+                        style: GoogleFonts.dmSans(fontSize: 13, color: AppColors.textSecondary),
                       ),
                     ],
                   ),

@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:ai_mechanix/features/diagnosis/presentation/pages/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hugeicons/hugeicons.dart';
 import 'package:ai_mechanix/core/constants/colors.dart';
 
 class AnalyzingPage extends StatefulWidget {
@@ -68,7 +67,7 @@ class _AnalyzingPageState extends State<AnalyzingPage> with TickerProviderStateM
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(
-                          color: AppColors.primaryAccent.withOpacity(0.1),
+                          color: AppColors.primaryAccent.withValues(alpha: 0.1),
                           width: 2,
                         ),
                       ),
@@ -100,17 +99,20 @@ class _AnalyzingPageState extends State<AnalyzingPage> with TickerProviderStateM
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.primaryAccent.withOpacity(0.15),
+                            color: AppColors.primaryAccent.withValues(alpha: 0.15),
                             blurRadius: 40,
                             spreadRadius: 10,
                           ),
                         ],
                       ),
-                      child: const Center(
-                        child: HugeIcon(
-                          icon: HugeIcons.strokeRoundedAiMagic,
-                          color: AppColors.primaryAccent,
-                          size: 64,
+                      child: Center(
+                        child: Text(
+                          'M',
+                          style: GoogleFonts.museoModerno(
+                            fontSize: 64,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.primaryAccent,
+                          ),
                         ),
                       ),
                     ),
@@ -189,7 +191,7 @@ class _StatusCarouselState extends State<_StatusCarousel> {
         key: ValueKey(_statuses[_currentIndex]),
         style: GoogleFonts.dmSans(
           fontSize: 16,
-          color: AppColors.primaryAccent.withOpacity(0.8),
+          color: AppColors.primaryAccent.withValues(alpha: 0.8),
         ),
       ),
     );

@@ -53,7 +53,7 @@ class PhotoPreviewPage extends StatelessWidget {
                     'Make sure the issue is clearly visible. You can add more photos if needed.',
                     style: GoogleFonts.dmSans(
                       fontSize: 14,
-                      color: Colors.white.withOpacity(0.7),
+                      color: Colors.white.withValues(alpha: 0.7),
                     ),
                   ),
                   const SizedBox(height: 32),
@@ -78,7 +78,14 @@ class PhotoPreviewPage extends StatelessWidget {
                               ),
                             );
                           },
-                          icon: HugeIcons.strokeRoundedAiMagic,
+                          icon: Text(
+                            'M',
+                            style: GoogleFonts.museoModerno(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
                         ),
                       ),
                     ],

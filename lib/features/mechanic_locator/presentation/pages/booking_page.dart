@@ -42,7 +42,7 @@ class _BookingPageState extends State<BookingPage> {
         ),
         title: Text(
           'Schedule Service',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 18,
             fontWeight: FontWeight.w300,
             color: AppColors.textPrimary,
@@ -58,7 +58,7 @@ class _BookingPageState extends State<BookingPage> {
             const SizedBox(height: 24),
             Text(
               'Select Date',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
                 color: AppColors.textSecondary,
@@ -93,7 +93,7 @@ class _BookingPageState extends State<BookingPage> {
             const SizedBox(height: 32),
             Text(
               'Available Slots',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
                 color: AppColors.textSecondary,
@@ -182,7 +182,7 @@ class _BookingPageState extends State<BookingPage> {
             children: [
               Text(
                 'Estimated Duration',
-                style: GoogleFonts.inter(
+                style: GoogleFonts.dmSans(
                   fontSize: 13,
                   color: AppColors.textSecondary,
                 ),
@@ -190,7 +190,7 @@ class _BookingPageState extends State<BookingPage> {
               const SizedBox(height: 2),
               Text(
                 '45 - 60 Minutes',
-                style: GoogleFonts.inter(
+                style: GoogleFonts.dmSans(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                   color: AppColors.textPrimary,
@@ -206,7 +206,7 @@ class _BookingPageState extends State<BookingPage> {
   Widget _buildConfirmAction(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 56,
+      height: 48,
       child: ElevatedButton(
         onPressed: () {
           _showSuccess(context);
@@ -221,7 +221,7 @@ class _BookingPageState extends State<BookingPage> {
         ),
         child: Text(
           'Confirm Booking',
-          style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w600),
+          style: GoogleFonts.dmSans(fontSize: 16, fontWeight: FontWeight.w600),
         ),
       ),
     );
@@ -246,7 +246,7 @@ class _BookingPageState extends State<BookingPage> {
                 color: AppColors.surfaceL1,
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: AppColors.statusSuccess.withOpacity(0.3),
+                  color: AppColors.statusSuccess.withValues(alpha: 0.3),
                 ),
               ),
               child: const HugeIcon(
@@ -258,7 +258,7 @@ class _BookingPageState extends State<BookingPage> {
             const SizedBox(height: 24),
             Text(
               'Booking Confirmed',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 22,
                 fontWeight: FontWeight.w300,
                 color: AppColors.textPrimary,
@@ -268,7 +268,7 @@ class _BookingPageState extends State<BookingPage> {
             Text(
               'We have successfully scheduled your service. Check your mail for details.',
               textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 14,
                 color: AppColors.textSecondary,
               ),
@@ -276,7 +276,7 @@ class _BookingPageState extends State<BookingPage> {
             const SizedBox(height: 32),
             SizedBox(
               width: double.infinity,
-              height: 56,
+              height: 48,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);

@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:ai_mechanix/core/constants/colors.dart';
-import 'package:ai_mechanix/features/profile/presentation/pages/settings_page.dart';
 import 'package:ai_mechanix/features/profile/presentation/pages/edit_profile_page.dart';
-import 'package:ai_mechanix/features/profile/presentation/pages/premium_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -16,41 +14,75 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leadingWidth: 0,
+        leading: const SizedBox.shrink(),
         title: Text(
           'Profile',
-          style: GoogleFonts.inter(
-            fontSize: 18,
-            fontWeight: FontWeight.w300,
+          style: GoogleFonts.dmSans(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
+            letterSpacing: -1,
           ),
         ),
         actions: [
           IconButton(
             icon: const HugeIcon(icon: HugeIcons.strokeRoundedSettings01, color: AppColors.textSecondary, size: 22),
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SettingsPage())),
+            onPressed: () => _showSettingsModal(context),
           ),
-          const SizedBox(width: 8),
+          const SizedBox(width: 16),
         ],
-        centerTitle: true,
+        centerTitle: false,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 32),
+            const SizedBox(height: 12),
             _buildUserHeader(context),
-            const SizedBox(height: 48),
-            _buildSectionHeader('MY GARAGE'),
+            const SizedBox(height: 32),
+            Text(
+              'My Activity',
+              style: GoogleFonts.dmSans(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textPrimary,
+                letterSpacing: -0.5,
+              ),
+            ),
             const SizedBox(height: 16),
-            _buildVehicleCard('Toyota Camry 2022', 'Silver • AUTO-8827'),
-            const SizedBox(height: 40),
+            Row(
+              children: [
+                Expanded(
+                  child: _StatCard(
+                    title: 'Saved reports',
+                    value: '12',
+                    icon: HugeIcons.strokeRoundedFile01,
+                    color: AppColors.accentLime,
+                    onTap: () {},
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: _StatCard(
+                    title: 'Bookings',
+                    value: '2',
+                    icon: HugeIcons.strokeRoundedCalendar01,
+                    color: AppColors.accentPurple,
+                    onTap: () {},
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 32),
             _buildSectionHeader('ACCOUNT'),
             const SizedBox(height: 16),
-            _buildMenuItem(HugeIcons.strokeRoundedCrown, 'Premium Plan', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PremiumPage()))),
-            _buildMenuItem(HugeIcons.strokeRoundedNotification01, 'Notifications'),
-            _buildMenuItem(HugeIcons.strokeRoundedShield01, 'Privacy & Security'),
-            _buildMenuItem(HugeIcons.strokeRoundedHelpCircle, 'Help & Support'),
-            const SizedBox(height: 48),
+            _buildMenuItem(HugeIcons.strokeRoundedCrown, 'Premium Plan', subtitle: 'Manage your subscription', onTap: () => _showPremiumModal(context)),
+            _buildMenuItem(HugeIcons.strokeRoundedNotification01, 'Notifications', subtitle: 'Alerts and updates'),
+            _buildMenuItem(HugeIcons.strokeRoundedShield01, 'Privacy & Security', subtitle: 'FaceID and passwords'),
+            _buildMenuItem(HugeIcons.strokeRoundedHelpCircle, 'Help & Support', subtitle: 'FAQs and live chat'),
+            const SizedBox(height: 40),
             _buildLogoutAction(),
             const SizedBox(height: 32),
           ],
@@ -60,44 +92,41 @@ class ProfilePage extends StatelessWidget {
   }
 
   Widget _buildUserHeader(BuildContext context) {
-    return Column(
+    return Row(
       children: [
-        Container(
-          width: 90,
-          height: 90,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColors.surfaceL1,
-            border: Border.all(color: AppColors.borderSubtle),
+        CircleAvatar(
+          radius: 32,
+          backgroundImage: const NetworkImage('https://i.pravatar.cc/150?u=b'),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Alex Johnson',
+                style: GoogleFonts.dmSans(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+              Text(
+                'alex.johnson@email.com',
+                style: GoogleFonts.dmSans(
+                  fontSize: 14,
+                  color: AppColors.textSecondary,
+                ),
+              ),
+            ],
           ),
-          child: Center(
-            child: Text(
-              'AJ',
-              style: GoogleFonts.inter(fontSize: 28, fontWeight: FontWeight.w300, color: AppColors.textPrimary),
-            ),
-          ),
         ),
-        const SizedBox(height: 20),
-        Text(
-          'Alex Johnson',
-          style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.w300, color: AppColors.textPrimary),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          'alex.johnson@email.com',
-          style: GoogleFonts.inter(fontSize: 14, color: AppColors.textSecondary),
-        ),
-        const SizedBox(height: 24),
-        OutlinedButton(
+        IconButton(
           onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const EditProfilePage())),
-          style: OutlinedButton.styleFrom(
-            side: const BorderSide(color: AppColors.borderSubtle),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-          ),
-          child: Text(
-            'Edit Profile',
-            style: GoogleFonts.inter(fontSize: 13, fontWeight: FontWeight.w500, color: AppColors.textPrimary),
+          icon: const HugeIcon(
+            icon: HugeIcons.strokeRoundedEdit02,
+            color: AppColors.textPrimary,
+            size: 20,
           ),
         ),
       ],
@@ -109,7 +138,7 @@ class ProfilePage extends StatelessWidget {
       children: [
         Text(
           title,
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 12,
             fontWeight: FontWeight.w600,
             color: AppColors.textSecondary,
@@ -120,67 +149,51 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildVehicleCard(String name, String info) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: AppColors.surfaceL1,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.borderSubtle),
-      ),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: AppColors.surfaceL2,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: const HugeIcon(icon: HugeIcons.strokeRoundedCar01, color: AppColors.iconActive, size: 24),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  name,
-                  style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.w500, color: AppColors.textPrimary),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  info,
-                  style: GoogleFonts.inter(fontSize: 13, color: AppColors.textSecondary),
-                ),
-              ],
-            ),
-          ),
-          const HugeIcon(icon: HugeIcons.strokeRoundedArrowRight01, color: AppColors.textDisabled, size: 20),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildMenuItem(List<List<dynamic>> icon, String label, {VoidCallback? onTap}) {
+  Widget _buildMenuItem(List<List<dynamic>> icon, String label, {String? subtitle, VoidCallback? onTap}) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.only(bottom: 8),
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        decoration: const BoxDecoration(
-          border: Border(bottom: BorderSide(color: Color(0xFF141414))),
+        margin: const EdgeInsets.only(bottom: 12),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: AppColors.surfaceL1,
+          borderRadius: BorderRadius.circular(32),
         ),
         child: Row(
           children: [
-            HugeIcon(icon: icon, color: AppColors.textSecondary, size: 20),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: AppColors.surfaceL2,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: HugeIcon(icon: icon, color: AppColors.textPrimary, size: 20),
+            ),
             const SizedBox(width: 16),
             Expanded(
-              child: Text(
-                label,
-                style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.textPrimary),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    label,
+                    style: GoogleFonts.dmSans(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
+                  if (subtitle != null)
+                    Text(
+                      subtitle,
+                      style: GoogleFonts.dmSans(
+                        fontSize: 13,
+                        color: AppColors.textSecondary,
+                      ),
+                    ),
+                ],
               ),
             ),
-            const HugeIcon(icon: HugeIcons.strokeRoundedArrowRight01, color: AppColors.textDisabled, size: 18),
+            const HugeIcon(icon: HugeIcons.strokeRoundedArrowRight01, color: AppColors.textSecondary, size: 16),
           ],
         ),
       ),
@@ -194,18 +207,246 @@ class ProfilePage extends StatelessWidget {
       child: TextButton(
         onPressed: () {},
         style: TextButton.styleFrom(
-          foregroundColor: AppColors.statusDanger,
+          foregroundColor: AppColors.error,
+          backgroundColor: AppColors.surfaceL1,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-            side: BorderSide(color: AppColors.statusDanger.withOpacity(0.3)),
-          ),
+          borderRadius: BorderRadius.circular(32),
+        ),
         ),
         child: Text(
           'Log Out',
-          style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w500),
+          style: GoogleFonts.dmSans(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        )
+,
+        ),
+      ),
+    );
+  }
+
+  void _showSettingsModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+      ),
+      backgroundColor: AppColors.surfaceL1,
+      builder: (context) => Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Settings',
+              style: GoogleFonts.dmSans(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textPrimary,
+              ),
+            ),
+            const SizedBox(height: 24),
+            _buildMenuItem(HugeIcons.strokeRoundedUser, 'Personal Info', subtitle: 'Name, email, phone'),
+            _buildMenuItem(HugeIcons.strokeRoundedShield01, 'Security', subtitle: 'Passwords, 2FA'),
+            _buildMenuItem(HugeIcons.strokeRoundedNotification01, 'Notifications', subtitle: 'Push, email alerts'),
+            _buildMenuItem(HugeIcons.strokeRoundedMapsLocation01, 'Location', subtitle: 'Service area'),
+            const SizedBox(height: 24),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showPremiumModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+      ),
+      backgroundColor: AppColors.surfaceL1,
+      builder: (context) => SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Premium Plan',
+                style: GoogleFonts.dmSans(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+              const SizedBox(height: 20),
+              _PremiumFeature(title: 'Unlimited Diagnostics', icon: HugeIcons.strokeRoundedAiChat02),
+              _PremiumFeature(title: 'Priority Booking', icon: HugeIcons.strokeRoundedCalendar01),
+              _PremiumFeature(title: 'SOS Assistance', icon: HugeIcons.strokeRoundedAlert01),
+              _PremiumFeature(title: 'Detailed Reports', icon: HugeIcons.strokeRoundedFile01),
+              const SizedBox(height: 24),
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: AppColors.accentLime.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Monthly',
+                      style: GoogleFonts.dmSans(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                    Text(
+                      'PKR 699',
+                      style: GoogleFonts.dmSans(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.accentLime,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 24),
+              SizedBox(
+                width: double.infinity,
+                height: 60,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Start Free Trial'),
+                ),
+              ),
+              const SizedBox(height: 24),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
+class _StatCard extends StatelessWidget {
+  final String title;
+  final String value;
+  final List<List<dynamic>> icon;
+  final Color color;
+  final VoidCallback onTap;
+
+  const _StatCard({
+    required this.title,
+    required this.value,
+    required this.icon,
+    required this.color,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
+      aspectRatio: 1.0,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(32),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.black.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: HugeIcon(
+                  icon: icon,
+                  color: AppColors.textInverse,
+                  size: 20,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    value,
+                    style: GoogleFonts.dmSans(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.textInverse,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        title,
+                        style: GoogleFonts.dmSans(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.textInverse.withValues(alpha: 0.7),
+                        ),
+                      ),
+                      HugeIcon(
+                        icon: HugeIcons.strokeRoundedArrowRight01,
+                        color: AppColors.textInverse,
+                        size: 14,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _PremiumFeature extends StatelessWidget {
+  final String title;
+  final List<List<dynamic>> icon;
+
+  const _PremiumFeature({
+    required this.title,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 12),
+      child: Row(
+        children: [
+          HugeIcon(
+            icon: icon,
+            color: AppColors.accentLime,
+            size: 20,
+          ),
+          const SizedBox(width: 16),
+          Text(
+            title,
+            style: GoogleFonts.dmSans(
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              color: AppColors.textPrimary,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

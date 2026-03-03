@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: isFullWidth ? double.infinity : null,
-      height: 60,
+      height: 48,
       child: isPrimary
           ? ElevatedButton(
               onPressed: onPressed,
@@ -41,11 +41,13 @@ class CustomButton extends StatelessWidget {
                   if (icon != null)
                     Align(
                       alignment: Alignment.centerRight,
-                      child: HugeIcon(
-                        icon: icon!,
-                        color: Colors.black,
-                        size: 20,
-                      ),
+                      child: icon is Widget
+                          ? icon as Widget
+                          : HugeIcon(
+                              icon: icon!,
+                              color: Colors.black,
+                              size: 20,
+                            ),
                     ),
                   Text(
                     label,

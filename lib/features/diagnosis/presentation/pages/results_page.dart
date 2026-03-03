@@ -24,7 +24,7 @@ class ResultsPage extends StatelessWidget {
         ),
         title: Text(
           'Analysis Results',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 18,
             fontWeight: FontWeight.w300,
             color: AppColors.textPrimary,
@@ -43,7 +43,7 @@ class ResultsPage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppColors.surfaceL1,
                 shape: BoxShape.circle,
-                border: Border.all(color: AppColors.statusWarning.withOpacity(0.3)),
+                border: Border.all(color: AppColors.statusWarning.withValues(alpha: 0.3)),
               ),
               child: const HugeIcon(
                 icon: HugeIcons.strokeRoundedAlertDiamond,
@@ -54,7 +54,7 @@ class ResultsPage extends StatelessWidget {
             const SizedBox(height: 24),
             Text(
               'Moderately Urgent',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 22,
                 fontWeight: FontWeight.w300,
                 color: AppColors.textPrimary,
@@ -64,7 +64,7 @@ class ResultsPage extends StatelessWidget {
             Text(
               'Drive with caution. Repair recommended soon.',
               textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
                 color: AppColors.textSecondary,
@@ -75,7 +75,7 @@ class ResultsPage extends StatelessWidget {
               children: [
                 Text(
                   'Probable Causes',
-                  style: GoogleFonts.inter(
+                  style: GoogleFonts.dmSans(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                     color: AppColors.textSecondary,
@@ -113,7 +113,7 @@ class ResultsPage extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: GoogleFonts.inter(
+                style: GoogleFonts.dmSans(
                   fontSize: 15,
                   fontWeight: FontWeight.w400,
                   color: AppColors.textPrimary,
@@ -149,7 +149,7 @@ class ResultsPage extends StatelessWidget {
       children: [
         SizedBox(
           width: double.infinity,
-          height: 56,
+          height: 48,
           child: ElevatedButton(
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const MechanicLocatorPage())),
             style: ElevatedButton.styleFrom(
@@ -160,7 +160,7 @@ class ResultsPage extends StatelessWidget {
             ),
             child: Text(
               'Find a Mechanic',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
               ),
@@ -170,7 +170,7 @@ class ResultsPage extends StatelessWidget {
         const SizedBox(height: 12),
         SizedBox(
           width: double.infinity,
-          height: 56,
+          height: 48,
           child: OutlinedButton(
             onPressed: () => Navigator.pop(context),
             style: OutlinedButton.styleFrom(
@@ -179,7 +179,7 @@ class ResultsPage extends StatelessWidget {
             ),
             child: Text(
               'Save Report',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
                 color: AppColors.textPrimary,

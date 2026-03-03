@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:ai_mechanix/core/constants/colors.dart';
-import 'package:ai_mechanix/features/home/presentation/pages/home_page.dart';
+import 'package:ai_mechanix/features/onboarding/presentation/pages/vehicle_setup_page.dart';
 import 'package:ai_mechanix/features/onboarding/presentation/pages/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -25,26 +25,29 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               const SizedBox(height: 32),
-              const Center(
-                child: HugeIcon(
-                  icon: HugeIcons.strokeRoundedAiMagic,
-                  color: Colors.white,
-                  size: 40,
+              Center(
+                child: Text(
+                  'M',
+                  style: GoogleFonts.museoModerno(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               const SizedBox(height: 24),
               Text(
                 'Welcome back',
-                style: GoogleFonts.inter(
-                  fontSize: 26,
-                  fontWeight: FontWeight.w300,
+                style: GoogleFonts.dmSans(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
                 ),
               ),
               const SizedBox(height: 8),
               Text(
                 'Sign in to your account',
-                style: GoogleFonts.inter(
+                style: GoogleFonts.dmSans(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                   color: AppColors.textSecondary,
@@ -64,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 keyboardType: TextInputType.emailAddress,
-                style: GoogleFonts.inter(fontSize: 15, color: AppColors.textPrimary),
+                style: GoogleFonts.dmSans(fontSize: 15, color: AppColors.textPrimary),
               ),
               const SizedBox(height: 12),
               TextField(
@@ -90,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () => setState(() => _isPasswordVisible = !_isPasswordVisible),
                   ),
                 ),
-                style: GoogleFonts.inter(fontSize: 15, color: AppColors.textPrimary),
+                style: GoogleFonts.dmSans(fontSize: 15, color: AppColors.textPrimary),
               ),
               const SizedBox(height: 8),
               Align(
@@ -99,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {},
                   child: Text(
                     'Forgot Password?',
-                    style: GoogleFonts.inter(
+                    style: GoogleFonts.dmSans(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
                       color: AppColors.textSecondary,
@@ -108,13 +111,28 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 24),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (_) => const HomePage()),
-                  );
-                },
-                child: const Text('Sign In'),
+              SizedBox(
+                width: double.infinity,
+                height: 60,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => const VehicleSetupPage()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.accentLime,
+                    foregroundColor: AppColors.textInverse,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+                  ),
+                  child: Text(
+                    'Sign In',
+                    style: GoogleFonts.dmSans(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(height: 24),
               Row(
@@ -124,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: Text(
                       'or',
-                      style: GoogleFonts.inter(
+                      style: GoogleFonts.dmSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w400,
                         color: AppColors.iconInactive,
@@ -135,13 +153,17 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
               const SizedBox(height: 24),
-              OutlinedButton(
-                onPressed: () {},
-                style: OutlinedButton.styleFrom(
-                  backgroundColor: AppColors.surfaceL1,
-                  side: const BorderSide(color: AppColors.borderMedium),
-                ),
-                child: Row(
+              SizedBox(
+                width: double.infinity,
+                height: 60,
+                child: OutlinedButton(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(
+                    backgroundColor: AppColors.surfaceL1,
+                    side: const BorderSide(color: AppColors.borderMedium),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+                  ),
+                  child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const HugeIcon(
@@ -152,13 +174,46 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(width: 12),
                     Text(
                       'Continue with Google',
-                      style: GoogleFonts.inter(
+                      style: GoogleFonts.dmSans(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                         color: AppColors.textPrimary,
                       ),
                     ),
                   ],
+                ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              SizedBox(
+                width: double.infinity,
+                height: 60,
+                child: OutlinedButton(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(
+                    backgroundColor: AppColors.surfaceL1,
+                    side: const BorderSide(color: AppColors.borderMedium),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const HugeIcon(
+                        icon: HugeIcons.strokeRoundedFacebook01,
+                        color: Color(0xFF1877F2),
+                        size: 20,
+                      ),
+                      const SizedBox(width: 12),
+                      Text(
+                        'Continue with Facebook',
+                        style: GoogleFonts.dmSans(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 32),
@@ -172,7 +227,7 @@ class _LoginPageState extends State<LoginPage> {
                   },
                   child: RichText(
                     text: TextSpan(
-                      style: GoogleFonts.inter(
+                      style: GoogleFonts.dmSans(
                         fontSize: 13,
                         fontWeight: FontWeight.w400,
                         color: AppColors.iconInactive,

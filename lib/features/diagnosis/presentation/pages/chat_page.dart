@@ -30,7 +30,7 @@ class _ChatPageState extends State<ChatPage> {
         ),
         title: Text(
           'AI Assistant',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 18,
             fontWeight: FontWeight.w300,
             color: AppColors.textPrimary,
@@ -86,10 +86,13 @@ class _ChatPageState extends State<ChatPage> {
                     shape: BoxShape.circle,
                     border: Border.all(color: AppColors.borderSubtle),
                   ),
-                  child: const HugeIcon(
-                    icon: HugeIcons.strokeRoundedAiMagic,
-                    color: AppColors.iconActive,
-                    size: 16,
+                  child: Text(
+                    'M',
+                    style: GoogleFonts.museoModerno(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.iconActive,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 12),
@@ -109,7 +112,7 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                   child: Text(
                     text,
-                    style: GoogleFonts.inter(
+                    style: GoogleFonts.dmSans(
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
                       color: AppColors.textPrimary,
@@ -156,13 +159,13 @@ class _ChatPageState extends State<ChatPage> {
               ),
               child: TextField(
                 controller: _controller,
-                style: GoogleFonts.inter(
+                style: GoogleFonts.dmSans(
                   fontSize: 15,
                   color: AppColors.textPrimary,
                 ),
                 decoration: InputDecoration(
                   hintText: 'Describe the issue...',
-                  hintStyle: GoogleFonts.inter(
+                  hintStyle: GoogleFonts.dmSans(
                     fontSize: 15,
                     color: AppColors.textDisabled,
                     fontWeight: FontWeight.w400,

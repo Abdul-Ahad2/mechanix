@@ -13,23 +13,25 @@ class SavedReportsPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          icon: const HugeIcon(
-            icon: HugeIcons.strokeRoundedArrowLeft02,
-            color: AppColors.textSecondary,
-            size: 22,
-          ),
-          onPressed: () => Navigator.pop(context),
-        ),
+        leadingWidth: 0,
+        leading: const SizedBox.shrink(),
         title: Text(
-          'Diagnostic Reports',
-          style: GoogleFonts.inter(
-            fontSize: 18,
-            fontWeight: FontWeight.w300,
+          'Reports',
+          style: GoogleFonts.dmSans(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
+            letterSpacing: -1,
           ),
         ),
-        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const HugeIcon(icon: HugeIcons.strokeRoundedArrowLeft02, color: AppColors.textSecondary, size: 22),
+            onPressed: () => Navigator.pop(context),
+          ),
+          const SizedBox(width: 16),
+        ],
+        centerTitle: false,
       ),
       body: ListView(
         padding: const EdgeInsets.all(24),
@@ -79,7 +81,7 @@ class SavedReportsPage extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppColors.surfaceL1,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(32),
         border: Border.all(color: AppColors.borderSubtle),
       ),
       child: Row(
@@ -107,7 +109,7 @@ class SavedReportsPage extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.inter(
+                  style: GoogleFonts.dmSans(
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
                     color: AppColors.textPrimary,
@@ -116,7 +118,7 @@ class SavedReportsPage extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   '$car • $date',
-                  style: GoogleFonts.inter(
+                  style: GoogleFonts.dmSans(
                     fontSize: 12,
                     color: AppColors.textSecondary,
                   ),

@@ -26,7 +26,7 @@ class GarageDetailsPage extends StatelessWidget {
                   const SizedBox(height: 40),
                   Text(
                     'Services',
-                    style: GoogleFonts.inter(
+                    style: GoogleFonts.dmSans(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                       color: AppColors.textSecondary,
@@ -65,7 +65,7 @@ class GarageDetailsPage extends StatelessWidget {
             Center(
               child: HugeIcon(
                 icon: HugeIcons.strokeRoundedStore01,
-                color: AppColors.textDisabled.withOpacity(0.2),
+                color: AppColors.textDisabled.withValues(alpha: 0.2),
                 size: 80,
               ),
             ),
@@ -75,7 +75,7 @@ class GarageDetailsPage extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.black.withOpacity(0.4),
+                    Colors.black.withValues(alpha: 0.4),
                     Colors.transparent,
                     AppColors.background,
                   ],
@@ -97,7 +97,7 @@ class GarageDetailsPage extends StatelessWidget {
           children: [
             Text(
               'ProAuto Center',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 28,
                 fontWeight: FontWeight.w300,
                 color: AppColors.textPrimary,
@@ -141,7 +141,7 @@ class GarageDetailsPage extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: GoogleFonts.inter(
+        style: GoogleFonts.dmSans(
           fontSize: 11,
           fontWeight: FontWeight.w500,
           color: AppColors.textSecondary,
@@ -175,7 +175,7 @@ class GarageDetailsPage extends StatelessWidget {
         const SizedBox(width: 12),
         Text(
           text,
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 14,
             fontWeight: FontWeight.w400,
             color: AppColors.textPrimary,
@@ -199,7 +199,7 @@ class GarageDetailsPage extends StatelessWidget {
         children: [
           Text(
             title,
-            style: GoogleFonts.inter(
+            style: GoogleFonts.dmSans(
               fontSize: 15,
               fontWeight: FontWeight.w400,
               color: AppColors.textPrimary,
@@ -221,7 +221,7 @@ class GarageDetailsPage extends StatelessWidget {
   Widget _buildPrimaryAction(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 56,
+      height: 48,
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
@@ -232,7 +232,7 @@ class GarageDetailsPage extends StatelessWidget {
         ),
         child: Text(
           'Book Appointment',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),

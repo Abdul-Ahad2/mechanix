@@ -23,7 +23,7 @@ class SOSPage extends StatelessWidget {
         ),
         title: Text(
           'Emergency SOS',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 18,
             fontWeight: FontWeight.w300,
             color: AppColors.statusDanger,
@@ -40,7 +40,7 @@ class SOSPage extends StatelessWidget {
             const SizedBox(height: 48),
             Text(
               'Transmitting Location...',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
                 color: AppColors.textSecondary,
@@ -49,7 +49,7 @@ class SOSPage extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               'H-12 Sector, Islamabad',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
                 color: AppColors.textPrimary,
@@ -74,8 +74,8 @@ class SOSPage extends StatelessWidget {
       height: 200,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: AppColors.statusDanger.withOpacity(0.1),
-        border: Border.all(color: AppColors.statusDanger.withOpacity(0.3), width: 2),
+        color: AppColors.statusDanger.withValues(alpha: 0.1),
+        border: Border.all(color: AppColors.statusDanger.withValues(alpha: 0.3), width: 2),
       ),
       child: Center(
         child: Container(
@@ -126,7 +126,7 @@ class SOSPage extends StatelessWidget {
           Expanded(
             child: Text(
               label,
-              style: GoogleFonts.inter(
+              style: GoogleFonts.dmSans(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
                 color: AppColors.textPrimary,
@@ -142,7 +142,7 @@ class SOSPage extends StatelessWidget {
   Widget _buildCancelAction(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 56,
+      height: 48,
       child: OutlinedButton(
         onPressed: () => Navigator.pop(context),
         style: OutlinedButton.styleFrom(
@@ -151,7 +151,7 @@ class SOSPage extends StatelessWidget {
         ),
         child: Text(
           'I am Safe Now',
-          style: GoogleFonts.inter(
+          style: GoogleFonts.dmSans(
             fontSize: 16,
             fontWeight: FontWeight.w500,
             color: AppColors.textPrimary,
